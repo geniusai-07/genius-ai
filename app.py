@@ -8,9 +8,8 @@ client = OpenAI(api_key=api_key)
 
 st.set_page_config(page_title="Genius AI", page_icon="🤖")
 st.title("🤖 Genius AI")
-st.write("Welcome to Genius AI – your smart web assistant!")
+st.write("Welcome to Genius AI — your smart web assistant!")
 
-# User input
 question = st.text_input("Ask me anything:")
 
 if question:
@@ -19,8 +18,8 @@ if question:
             response = client.chat.completions.create(
                 model="gpt-3.5-turbo",
                 messages=[
-                    {"role": "system", "content": "You are a helpful assistant."},
-                    {"role": "user", "content": question},
+                    {"role": "system", "content": "You are a helpful and smart AI assistant."},
+                    {"role": "user", "content": question}
                 ]
             )
             answer = response.choices[0].message.content
